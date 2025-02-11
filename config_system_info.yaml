@@ -1,0 +1,87 @@
+table:
+  wait_before_refresh: 0.5
+  refresh_per_second: 10
+  title: "System Metrics script written in :snake:"
+  style: "green"
+  columns:
+    - name: "Category"
+      justify: "left"
+      no_wrap: True
+      style: "magenta"
+    - name: "Metric"
+      justify: "left"
+      no_wrap: True
+      style: "green"
+    - name: "Usage"
+      justify: "left"
+      no_wrap: True
+      style: "red"
+    - name: "Description"
+      justify: "left"
+      no_wrap: True
+      style: "cyan"
+categories:
+  - name: ":brain: MEMORY"
+    metrics:
+      - name: "Used"
+        description: "Total Ram currently in use by the system"
+        function: "virtual_memory"
+        attribute: "used"
+        unit: "GB"
+        show_percentage: True
+      - name: "Active"
+        description: "Ram actively being accessed by processes"
+        function: "virtual_memory"
+        attribute: "active"
+        unit: "GB"
+        show_percentage: True
+      - name: "Swap"
+        description: "Data moved to disk"
+        function: "swap_memory"
+        attribute: "used"
+        unit: "GB"
+        show_percentage: True
+  - name: ":computer: CPU"
+    metrics:
+      - name: "Idle"
+        description: "Percentage of time the CPU is not in use"
+        function: "cpu_times_percent"
+        attribute: "idle"
+  - name: ":floppy_disk: Disk"
+    metrics:
+      - name: "Disk Usage"
+        description: "Total disk space currently in use"
+        function: "disk_usage"
+        attribute: "used"
+        unit: "GB"
+        parameters:
+        - "/"
+  - name: ":globe_with_meridians: Network"
+    metrics:
+      - name: "Network Sent"
+        description: "Total data sent over the network"
+        function: "net_io_counters"
+        attribute: "bytes_sent"
+        unit: "MB"
+      - name: "Network Recv"
+        description: "Total data received over the network"
+        function: "net_io_counters"
+        attribute: "bytes_recv"
+        unit: "MB"
+  - name: ":bar_chart: System Info"
+    metrics:
+      - name: "Total CPU Cores"
+        description: "Number of physical CPU cores available"
+        function: "cpu_count"
+      - name: "Total Memory"
+        description: "Total installed RAM"
+        attribute: "total"
+        unit: "GB"
+        function: "virtual_memory"
+      - name: "Disk Size"
+        description: "Total storage capacity of the disk"
+        function: "disk_usage"
+        parameters:
+        - "/"
+        attribute: "total"
+        unit: "GB"

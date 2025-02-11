@@ -1,4 +1,4 @@
-import time, yaml, logging
+import time, yaml, logging, sys
 from rich.table import Table
 from rich.live import Live
 
@@ -14,8 +14,12 @@ column_config: ColumnConfig = []
 #TODO: Logging should be in JSON format for structured logging.
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+if len(sys.argv) != 2:
+    logging.info("Usage: py run.py <config_name>.yaml")
+    sys.exit(1)
+
 #TODO: config.yaml file could be passed as arg.
-with open("config.yaml") as stream:
+with open(sys.argv[1]) as stream:
     try:
         config = yaml.safe_load(stream)
         table = config.get("table", None)

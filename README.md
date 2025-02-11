@@ -22,12 +22,10 @@ Based on the provided config file, we can define the actual values shown, the ta
 
 ## Possible Enhancements
 
-While this project serves as a flexible proof of concept, here are some potential improvements that could be explored:
+While this project serves as a proof of concept, here are some potential improvements:
 
-1. **More complex calculations**: Extending the system to support computed metrics like data received over the network per second. This could be implemented via a dynamic calculator that determines and executes operations defined in the YAML file.
+- **More complex calculations**: Calculations of provided metrics. This could be implemented via a dynamic calculator that determines operations defined in the YAML file and executes them.
 
-2. **Structured logging**: In a production setup, structured logging (e.g., JSON format) would improve filtering, flexibility, and traceability in distributed environments.
+- **Structured logging**: In a production setup, structured logging (JSON format) would improve filtering and flexibility in distributed setups.
 
-3. **Custom exception handling**: Introducing a `MetricError` exception could improve error management for unsupported or failing metric functions.
-
-4. **Unit tests**:  Adding unit tests would ensure correctness and prevent regressions, making future enhancements safer.
+- **Unit tests**:  Currently no tests are defined for the DynamicMetric functions.

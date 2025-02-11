@@ -28,4 +28,4 @@ While this project serves as a proof of concept, here are some potential improve
 
 - **Structured logging**: In a production setup, structured logging (JSON format) would improve filtering and flexibility in distributed setups.
 
-- **Unit tests**:  Currently no tests are defined for the DynamicMetric functions.
+- **Unit tests**: Currently no tests are defined for the DynamicMetric functions.

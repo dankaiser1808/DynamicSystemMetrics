@@ -4,7 +4,7 @@ A flexible script that renders a system metrics table using `psutil`. Function c
 
 ## Why?
 
-Since I wanted to play around with Python and learn a new programming language, I built this small project focused on OS-level metrics. The idea was to showcase how injecting values via a config file can make code more flexible and adaptable.
+Since I wanted to play around with Python, I built this small project focused on OS-level metrics. The idea was to showcase how injecting values via a config file can make code more flexible and adaptable.
 
 Since `psutil` metric-gathering functions are generated at runtime, we can dynamically add new ones to be rendered in the table. Of course, this comes with a trade-off: higher complexity and trickier debugging. In a real production setup, you'd typically send these metrics to a collector like Prometheus instead-but hey, this is just for fun and learning!
 
